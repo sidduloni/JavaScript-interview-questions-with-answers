@@ -1,6 +1,5 @@
 # JavaScript-interview-questions-with-answers
 
-Certainly, I'll provide answers to your JavaScript-related questions in the format you requested:
 
 ## S.No 1: What is Ecmascript in JavaScript?
 **Ans:** ECMAScript (often abbreviated as ES) is the scripting language specification that JavaScript is based on. It defines the syntax, semantics, and standard library for JavaScript. Different versions of JavaScript, like ES5, ES6 (or ECMAScript 2015), ES2016, and so on, are implementations of the ECMAScript standard.
