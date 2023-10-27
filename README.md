@@ -23,9 +23,51 @@
 
 ## S.No 4: What is deep copy and shallow copy in JavaScript?
 **Ans:** 
-- Shallow Copy: A shallow copy of an object or array creates a new object or array, but it doesn't create copies of the objects/arrays contained within the original. Changes made to nested objects or arrays in a shallow copy affect the original.
+- 1. Shallow Copy:
+A shallow copy of an object creates a new object with a new reference to the top-level properties of the original object. However, it doesn't create copies of nested objects within the original object. Changes to nested objects in the copied object will affect the original object and vice versa. Here's an example:
 
-- Deep Copy: A deep copy creates entirely new objects and arrays, including copies of nested objects/arrays. Changes to nested objects in a deep copy do not affect the original.
+```javascript
+// Original object
+const originalObject = {
+  name: "John",
+  address: {
+    city: "New York",
+    state: "NY"
+  }
+};
+
+// Creating a shallow copy
+const shallowCopy = Object.assign({}, originalObject);
+
+shallowCopy.name = "Alice"; // Changes only the shallow copy
+shallowCopy.address.city = "Los Angeles"; // Also changes the original object
+
+console.log(originalObject); // { name: 'Alice', address: { city: 'Los Angeles', state: 'NY' } }
+console.log(shallowCopy); // { name: 'Alice', address: { city: 'Los Angeles', state: 'NY' } }
+```
+
+- 2. Deep Copy:
+A deep copy, on the other hand, creates a completely independent copy of an object, including all nested objects and their properties. Changes to the copied object won't affect the original object.
+
+```javascript
+// Original object
+const originalObject = {
+  name: "John",
+  address: {
+    city: "New York",
+    state: "NY"
+  }
+};
+
+// Creating a deep copy using JSON
+const deepCopy = JSON.parse(JSON.stringify(originalObject));
+
+deepCopy.name = "Alice"; // Changes only the deep copy
+deepCopy.address.city = "Los Angeles"; // Does not affect the original object
+
+console.log(originalObject); // { name: 'John', address: { city: 'New York', state: 'NY' } }
+console.log(deepCopy); // { name: 'Alice', address: { city: 'Los Angeles', state: 'NY' } }
+```
 
 ## S.No 5: What is a promise, callback function, and async/await in JavaScript?
 **Ans:** 
