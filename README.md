@@ -256,4 +256,80 @@ element.addEventListener('click', function(event) {
 
 ## S.No 36: What is memoization in JavaScript?
 **Ans:** Memoization is an optimization technique in JavaScript where the results of expensive function calls are cached to avoid redundant computations. This is particularly useful for functions that take a long time to compute the same result for the same inputs.
+## S.No 37 What is the output of the below console
+**Ans:**
+```javascript
+//Q .1:
+(function() {
+    var a = b = 3;
+})();
+console.log("a defined? " + (typeof a !== 'undefined'));
+console.log("b defined? " + (typeof b !== 'undefined'));
+//Output:
+// a defined? false
+// b defined? true
+
+//Q .2:
+console.log(0.1 + 0.2);
+console.log(0.1 + 0.2 == 0.3);
+//Output
+// 0.30000000000000004
+// false
+
+//Q .3:
+(function() {
+    console.log(1);
+    setTimeout(function() {
+        console.log(2)
+    }, 1000);
+    setTimeout(function() {
+        console.log(3)
+    }, 0);
+    console.log(4);
+})();
+//Output:
+// 1
+// 4
+// 3
+// 2
+
+//Q .4:
+console.log(1 + "2" + "2");
+console.log(1 + +"2" + "2");
+console.log(1 + -"1" + "2");
+console.log(+"1" + "1" + "2");
+console.log("A" - "B" + "2");
+console.log("A" - "B" + 2);
+// Output
+//122
+// 32
+// 02
+// 112
+// NaN2
+// NaN
+
+//Q .5:
+var a = {},
+    b = {
+        key: 'b'
+    },
+    c = {
+        key: 'c'
+    };
+a[b] = 123;
+a[c] = 456;
+console.log(a[b]);
+// Output
+// 456
+
+//Q .6:
+(function(x) {
+    return (function(y) {
+        console.log(x);
+    })(2)
+})(1);
+// Output
+// 1
+
+```
 
