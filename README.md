@@ -4,14 +4,19 @@
 ## S.No 1: What is Ecmascript in JavaScript?
 **Ans:** ECMAScript (often abbreviated as ES) is the scripting language specification that JavaScript is based on. It defines the syntax, semantics, and standard library for JavaScript. Different versions of JavaScript, like ES5, ES6 (or ECMAScript 2015), ES2016, and so on, are implementations of the ECMAScript standard.
 
-## S.No 2: What is the difference between `let`, `const`, and `var` in JavaScript?
-**Ans:** `let`, `const`, and `var` are used for variable declaration in JavaScript.
+## S.No 2: What is the difference between `object` and `array` in JavaScript?
+**Ans:** 
 
-- `var`: Function-scoped and can be redeclared within the same scope. Variables declared with `var` are hoisted.
+| Characteristic           | Objects                            | Arrays                            |
+|--------------------------|-----------------------------------|-----------------------------------|
+| **Structure**            | Collections of key-value pairs.    | Ordered lists of values.          |
+| **Declaration Syntax**   | `let person = { key: value };`    | `let fruits = [value1, value2];` |
+| **Accessing Values**     | Access using keys.                 | Access using indices.             |
+| **Example**              | `person.name`                     | `fruits[0]`                       |
+| **Order**                | Order of key-value pairs is not guaranteed. | Order of elements is maintained. |
+| **Use Cases**           | Named properties, non-numeric keys. | When order or numerical indices are important. |
 
-- `let`: Block-scoped and can't be redeclared within the same block scope. It allows for block-level scoping, and variables declared with `let` are not hoisted.
 
-- `const`: Block-scoped like `let`, but its value cannot be reassigned after declaration. However, for objects and arrays, the contents can be modified.
 
 ## S.No 3: What is the spread operator, rest operator, and default parameter in JavaScript?
 **Ans:** 
@@ -332,4 +337,35 @@ console.log(a[b]);
 // 1
 
 ```
+
+## S.No 37: What is the use and benifit of separating collection intead of having all in one collection and vice-versa in mongodb
+**Ans:**
+Separating collections in MongoDB offers several benefits for database organization and performance
+
+**Using separate collections**
+- Firstly, it allows for a more modular and scalable database design. Each collection can be tailored to store a specific type of data, promoting a clear and logical structure. This separation enhances the maintainability of the database, making it easier to update or query specific sets of data without affecting unrelated information.
+- Secondly, separating collections can contribute to improved query performance. Smaller collections can lead to more efficient indexing, reducing the time and resources required for queries. Additionally, it allows for better control over access permissions, enabling more granular security settings based on the nature of the data in each collection.
+
+**Using single collection**
+- combining all data into a single collection may simplify initial setup but can lead to decreased performance and hinder the ability to manage and scale the database effectively.
+
+## S.No 38 If the setTimeout function has a delay of 0 milliseconds, even though why is it executed after the normal function execution ?
+**Ans**
+
+```javascript
+function one() {
+  setTimeout(() => {
+    console.log("inside timer");
+  }, 0);
+  console.log("outside timer");
+}
+
+one();
+```
+**Reason :**
+ - Timer function is placed in the event queue to be processed after the current execution context completes.
+
+ - After the current execution context is completed, the function inside the timer is picked up from the event queue and executed. 
+
+ - The use of `setTimeout` with a delay of 0 is often used in scenarios where you want to defer the execution of a function until the next event loop cycle, allowing other synchronous     tasks to complete first.
 
