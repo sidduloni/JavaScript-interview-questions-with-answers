@@ -74,8 +74,17 @@ console.log(originalObject); // { name: 'John', address: { city: 'New York', sta
 console.log(deepCopy); // { name: 'Alice', address: { city: 'Los Angeles', state: 'NY' } }
 ```
 
-## S.No 5: 
+## S.No 5: Explain Object.freeze() and Object.seal() in javascript
 **Ans:** 
+**Object.freeze()**:
+- It is immutable
+- Helps in preventing existing properties from being changed
+- Preventing the new properties to be added to the specific object
+
+**Object.seal()**:
+- It is mutable
+- Allows existing properties to be modified
+- But prevents the addition and deletion of new properties
 
 
 ## S.No 6: 
