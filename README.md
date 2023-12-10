@@ -87,8 +87,20 @@ console.log(deepCopy); // { name: 'Alice', address: { city: 'Los Angeles', state
 - But prevents the addition and deletion of new properties
 
 
-## S.No 6: 
+## S.No 6: Explain typescript over javascript
 **Ans:** 
+-  Main diff : Js is Dynamically typed and Ts is Statically typed
+-  Type safety
+-  Strict static typing which makes Ts code safer.
+-  Browsers cant execute/understand Ts which requires TS-Compilation, where Js does.
+-  Ts supports PROTOTYPING while Js does'nt.
+-  It provides: Interfaces, Type Aliases and Abstract classes, where Js does'nt
+
+   Advantages:
+-  Ts identifies compilation errors during development which saves time
+  Disadvantages:
+- When .Ts file compilation happens Ts requires an Extra Step
+- Learning Ts is more challenging than Js
 
 
 ## S.No 7: What is event bubbling and event capturing in JavaScript?
