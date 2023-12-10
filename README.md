@@ -98,6 +98,7 @@ console.log(deepCopy); // { name: 'Alice', address: { city: 'Los Angeles', state
 
    Advantages:
 -  Ts identifies compilation errors during development which saves time
+  
   Disadvantages:
 - When .Ts file compilation happens Ts requires an Extra Step
 - Learning Ts is more challenging than Js
