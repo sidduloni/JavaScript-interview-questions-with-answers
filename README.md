@@ -594,7 +594,9 @@ The useReducer Hook is similar to the useState Hook. Used for complex logic
   2. Bar
      * Baz
      * Qux
-  
+  ```javascript
+<h1>hello</h1>
+  ```
 </details>
 
 **6. useCallback :**
