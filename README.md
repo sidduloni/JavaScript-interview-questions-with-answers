@@ -132,6 +132,37 @@ Event Bubbling and Event Capturing are two phases of event propagation in the DO
 **Ans:** 
 A generator function in JavaScript is a special type of function that can be paused and resumed multiple times. This is done using the yield keyword, which tells the function to pause execution and return a value. The function can then be resumed by calling the next() method on the generator object.
 
+Example of a generator function that yields values:
+```javascript
+function* generatorFunction() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const generator = generatorFunction();
+
+console.log(generator.next().value); // Output: 1
+console.log(generator.next().value); // Output: 2
+console.log(generator.next().value); // Output: 3
+console.log(generator.next().value); // Output: undefined
+```
+Example of a generator function that generates an infinite sequence:
+```javascript
+
+function* infiniteSequence() {
+  let i = 0;
+  while (true) {
+    yield i++;
+  }
+}
+
+const generator = infiniteSequence();
+
+console.log(generator.next().value); // Output: 0
+console.log(generator.next().value); // Output: 1
+console.log(generator.next().value); // Output: 2
+```
 
 ## S.No 11: 
 **Ans:** 
