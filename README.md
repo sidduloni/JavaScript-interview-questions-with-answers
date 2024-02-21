@@ -128,8 +128,9 @@ Event Bubbling and Event Capturing are two phases of event propagation in the DO
 
 5. Recursive Functions: Functions that call themselves, often used for repetitive tasks or traversing data structures.
 
-## S.No 10: 
+## S.No 10: Generator function in JavaScript
 **Ans:** 
+A generator function in JavaScript is a special type of function that can be paused and resumed multiple times. This is done using the yield keyword, which tells the function to pause execution and return a value. The function can then be resumed by calling the next() method on the generator object.
 
 
 ## S.No 11: 
