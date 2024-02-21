@@ -589,13 +589,79 @@ The useReducer Hook is similar to the useState Hook. Used for complex logic
 
 <details>
   <summery>Complete example for useReducer</summery>
-  ### Heading
-  1. Foo
-  2. Bar
-     * Baz
-     * Qux
+ 
   ```javascript
-<h1>hello</h1>
+  import { useReducer, useState } from "react";
+
+const initialValue = [
+  {
+    id: Date.now(),
+    name: "John",
+  },
+];
+
+const reducer = (state: any, action: any) => {
+  switch (action.type) {
+    case "add":
+      return [...state, action.payload];
+    case "delete":
+      return state.filter((val: any) => val.id !== action.payload.id);
+    default:
+      throw new Error("Error adding/deleting  contact");
+  }
+};
+
+const UseReducerHook2 = () => {
+  const [state, dispatch] = useReducer(reducer, initialValue);
+  const [name, setName] = useState("");
+
+  const addContact = (e: any) => {
+    e.preventDefault()
+    const contact = {
+      id: Date.now(),
+      name: name,
+    };
+
+    dispatch({ type: "add", payload: contact });
+    setName("");
+  };
+
+  return (
+    <>
+      <div>
+        <form onSubmit={addContact} method="POST">
+          <input
+            type="text"
+            name="name"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+          />
+          <button>Add</button>
+        </form>
+        <ul>
+          {state &&
+            state.map((nam: any) => {
+              return (
+                  <li key={nam}>
+                    {nam.name}{" "}
+                    <button
+                      onClick={() =>
+                        dispatch({ type: "delete", payload: {id: nam.id} })
+                      }
+                    >
+                      Delete
+                    </button>
+                  </li>
+              );
+            })}
+        </ul>
+      </div>
+    </>
+  );
+};
+
+export default UseReducerHook2;
+
   ```
 </details>
 
